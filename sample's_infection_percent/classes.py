@@ -2,9 +2,6 @@ import cv2
 
 
 class Point:
-    def __init__(self):
-        self.x = 0
-        self.y = 0
 
     def __init__(self, x, y):
         self.x = x
@@ -19,10 +16,6 @@ class Point:
 
 
 class Sample:
-    def __init__(self):
-        self.middle = Point()
-        self.r1 = 0
-        self.r2 = 0
 
     def __init__(self, x, y, r1, r2):
         self.middle = Point(x, y)
@@ -39,9 +32,7 @@ class Sample:
 
 
 class Input:
-    def __init__(self):
-        path = r"C:\Users\shaha\sample's_infection_percent\test .jpg"
-        self.img = cv2.imread(path, 0)
-        self.control = Sample(780, 580, 50, 100)
-        self.samples = [Sample(900, 580, 50, 100), Sample(1480, 580, 50, 100)]
-
+    def __init__(self, img_path, control_sample, check_samples):
+        self.img = img_path
+        self.control = control_sample
+        self.samples = check_samples
